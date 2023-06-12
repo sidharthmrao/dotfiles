@@ -179,5 +179,5 @@ client.focused_inactive #fa05bd #fa05bd #ffffff #fa05bd #fa05bd
 client.unfocused #fa05bd #fa05bd #ffffff #fa05bd #fa05bd
 
 # GAPS
-gaps inner 10
-gaps outer 10
+gaps inner 0
+gaps outer 0
