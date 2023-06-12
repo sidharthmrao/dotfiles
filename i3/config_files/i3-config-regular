@@ -1,0 +1,183 @@
+# MOD SELECTIONS
+set $mod Mod4
+
+# FONT SELECTIONS
+font pango:Hurmit Nerd Font Mono Bold 8
+
+# .DESKTOP STARTUP
+exec --no-startup-id dex --autostart --environment i3
+
+# I3 SHORTCUTS
+bindsym $mod+Shift+r restart
+
+# WINDOWS
+bindsym $mod+Shift+q kill
+
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+bindsym $mod+h split h
+bindsym $mod+v split v
+
+bindsym $mod+f fullscreen toggle
+
+for_window [class="^.*"] border pixel 1 # Disable the title of windows
+
+floating_modifier $mod
+bindsym $mod+Shift+space floating toggle
+bindsym $mod+Shift+F focus mode_toggle
+floating_maximum_size -1 x -1
+for_window [class="floating_window"] floating enable
+
+bindsym $mod+Shift+minus move scratchpad
+bindsym $mod+minus scratchpad show
+
+mode "resize" {
+        # These bindings trigger as soon as you enter the resize mode
+
+        # Pressing left will shrink the window’s width.
+        # Pressing right will grow the window’s width.
+        # Pressing up will shrink the window’s height.
+        # Pressing down will grow the window’s height.
+        bindsym j resize shrink width 10 px or 10 ppt
+        bindsym k resize grow height 10 px or 10 ppt
+        bindsym l resize shrink height 10 px or 10 ppt
+        bindsym odiaeresis resize grow width 10 px or 10 ppt
+
+        # same bindings, but for the arrow keys
+        bindsym Left resize shrink width 10 px or 10 ppt
+        bindsym Down resize grow height 10 px or 10 ppt
+        bindsym Up resize shrink height 10 px or 10 ppt
+        bindsym Right resize grow width 10 px or 10 ppt
+
+	bindsym Shift+Left resize shrink width 5 px or 5 ppt
+	bindsym Shift+Down resize grow height 5 px or 5 ppt
+	bindsym Shift+Up resize shrink height 5 px or 5 ppt
+	bindsym Shift+Right resize grow width 5 px or 5 ppt	
+
+        # back to normal: Enter or Escape or $mod+r
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+        bindsym $mod+r mode "default"
+}
+
+bindsym $mod+r mode "resize"
+
+mode "lock" {
+        bindsym $mod+Escape exec --no-startup-id i3-msg mode "default" && betterlockscreen -l dim
+	bindsym $mod+f exec --no-startup-id notify-send "LOCKED"
+        # bindsym $mod+Escape exec --no-startup-id betterlockscreen -l dim
+}
+
+bindsym $mod+l mode "lock"
+
+# WORKSPACES
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
+
+bindsym $mod+1 workspace number $ws1
+bindsym $mod+2 workspace number $ws2
+bindsym $mod+3 workspace number $ws3
+bindsym $mod+4 workspace number $ws4
+bindsym $mod+5 workspace number $ws5
+bindsym $mod+6 workspace number $ws6
+bindsym $mod+7 workspace number $ws7
+bindsym $mod+8 workspace number $ws8
+bindsym $mod+9 workspace number $ws9
+bindsym $mod+0 workspace number $ws10
+
+bindsym $mod+Shift+1 move container to workspace number $ws1
+bindsym $mod+Shift+2 move container to workspace number $ws2
+bindsym $mod+Shift+3 move container to workspace number $ws3
+bindsym $mod+Shift+4 move container to workspace number $ws4
+bindsym $mod+Shift+5 move container to workspace number $ws5
+bindsym $mod+Shift+6 move container to workspace number $ws6
+bindsym $mod+Shift+7 move container to workspace number $ws7
+bindsym $mod+Shift+8 move container to workspace number $ws8
+bindsym $mod+Shift+9 move container to workspace number $ws9
+bindsym $mod+Shift+0 move container to workspace number $ws10
+
+bindsym Mod1+Shift+Tab workspace prev
+bindsym Mod1+Tab workspace back_and_forth
+
+# SHORTCUTS - APPLICATIONS
+bindsym $mod+Return exec kitty
+bindsym $mod+D exec --no-startup-id bash ~/.config/rofi/launchers/colorful/launcher.sh
+bindsym $mod+Shift+Return exec google-chrome-stable
+bindsym $mod+Ctrl+Return exec thunderbird
+bindsym $mod+Shift+P exec --no-startup-id "pycharm"
+bindsym XF86Calculator exec --no-startup-id "qalculate-gtk"
+bindsym $mod+Shift+C exec --no-startup-id kitty calcurse
+
+# SHORTCUTS - CHANGE CONFIG
+bindsym $mod+Shift+S exec --no-startup-id python /home/crispy/dotfiles/i3/scripts/i3-config-swap.py
+
+# SHORTCUTS - SCREENSHOTS
+bindsym Print exec --no-startup-id maim --select | xclip -selection clipboard -t image/png
+bindsym Ctrl+Print exec --no-startup-id maim | xclip -selection clipboard -t image/png
+
+# SHORTCUTS - AUDIO
+bindsym $mod+space exec playerctl play-pause
+bindsym $mod+Control+Right exec playerctl next
+bindsym $mod+Control+Left exec playerctl previous
+
+# STARTUP - WALLPAPER
+exec --no-startup-id nitrogen --restore
+
+# STARTUP - COMPOSITOR
+exec_always --no-startup-id picom -b --experimental-backends --config /home/crispy/dotfiles/picom/picom.conf
+
+# STARTUP - POLYBAR
+exec_always --no-startup-id bash ~/dotfiles/polybar/forest/launch.sh
+
+# STARTUP - POLKIT
+exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+
+# STARTUP - DBUS 
+exec dbus-launch
+
+# STARTUP - FLOATING TERM
+exec_always --no-startup-id kitti3
+bindsym $mod+Tab nop kitti3
+
+# STARTUP - TRAY
+exec --no-startup-id nm-applet
+exec_always --no-startup-id xfce4-power-manager
+exec --no-startup-id clipit
+exec --no-startup-id blueman-applet
+exec --no-startup-id volumeicon
+exec --no-startup-id pa-applet
+
+# STARTUP - I3-LOCK
+exec --no-startup-id xautolock -time 10 -locker betterlockscreen -l dim
+bindsym $mod+Escape exec --no-startup-id betterlockscreen -l dim
+
+# STARTUP - PULSEAUDIO
+exec --no-startup-id pulseaudio
+
+# STARTUP - AUTORANDR
+exec_always --no-startup-id autorandr --change
+
+# COLORS
+client.focused #fa05bd #fa05bd #ffffff #fa05bd #fa05bd
+client.focused_inactive #fa05bd #fa05bd #ffffff #fa05bd #fa05bd
+client.unfocused #fa05bd #fa05bd #ffffff #fa05bd #fa05bd
+
+# GAPS
+gaps inner 10
+gaps outer 10
