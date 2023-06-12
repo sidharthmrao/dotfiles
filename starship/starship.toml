@@ -1,0 +1,114 @@
+format = """
+[{ ](bold green)$directory$package$git_branch$git_status$python$cmd_duration[} ](bold green)$line_break$character
+"""
+
+right_format = """${custom.uptime}${custom.time}"""
+
+# CUSTOM
+[custom.time]
+command = 'date +"%l:%M%p"'
+when = "true"
+format = '[|$symbol($output)| ](bold green)'
+
+[custom.uptime]
+command = '/home/crispy/dotfiles/starship/uptime.sh'
+when = "true"
+format = '[\($symbol($output)\) ](bold green)'
+
+# BUILTIN
+[character]
+success_symbol = "[λ➜](bold green)"
+error_symbol = "[Ω➜](bold red)"
+
+[aws]
+symbol = "  "
+
+[buf]
+symbol = " "
+
+[c]
+symbol = " "
+
+[conda]
+symbol = " "
+
+[dart]
+symbol = " "
+
+[directory]
+read_only = " "
+
+[docker_context]
+symbol = " "
+
+[elixir]
+symbol = " "
+
+[elm]
+symbol = " "
+
+[git_branch]
+symbol = " "
+format = '\[[$symbol$branch]($style)\]'
+
+[git_status]
+format = '([\[$all_status$ahead_behind\]]($style))'
+
+[golang]
+symbol = " "
+
+[haskell]
+symbol = " "
+
+[hg_branch]
+symbol = " "
+
+[java]
+symbol = " "
+
+[julia]
+symbol = " "
+
+[lua]
+symbol = " "
+
+[memory_usage]
+symbol = " "
+
+[meson]
+symbol = "喝 "
+
+[nim]
+symbol = " "
+
+[nix_shell]
+symbol = " "
+
+[nodejs]
+symbol = " "
+
+[package]
+symbol = " "
+format = '\[[$symbol$version]($style)\]'
+
+[python]
+symbol = " "
+format = '\[[${symbol}${pyenv_prefix}(${version})(\($virtualenv\))](bold green)\]'
+
+[rlang]
+symbol = "ﳒ "
+
+[ruby]
+symbol = " "
+
+[rust]
+symbol = " "
+
+[scala]
+symbol = " "
+
+[spack]
+symbol = "🅢 "
+
+[cmd_duration]
+format = '\[[⏱ $duration$ahead_behind]($style)\]'
