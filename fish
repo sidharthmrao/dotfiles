@@ -1,1 +1,0 @@
-/home/crispy/.config/fish/
