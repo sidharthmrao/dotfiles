@@ -32,6 +32,7 @@ for_window [class="^.*"] border pixel 1 # Disable the title of windows
 
 floating_modifier $mod
 bindsym $mod+Shift+space floating toggle
+bindsym $mod+Shift+S sticky enable
 bindsym $mod+Shift+F focus mode_toggle
 floating_maximum_size -1 x -1
 for_window [class="floating_window"] floating enable
@@ -120,12 +121,32 @@ bindsym $mod+Return exec kitty
 bindsym $mod+D exec --no-startup-id bash ~/.config/rofi/launchers/colorful/launcher.sh
 bindsym $mod+Shift+Return exec google-chrome-stable
 bindsym $mod+Ctrl+Return exec thunderbird
-bindsym $mod+Shift+P exec --no-startup-id "pycharm"
+# bindsym $mod+Shift+P exec --no-startup-id "pycharm"
 bindsym XF86Calculator exec --no-startup-id "qalculate-gtk"
 bindsym $mod+Shift+C exec --no-startup-id kitty calcurse
 
+# SHORTCUTS + STARTUP - PLANNER
+exec_always --no-startup-id "flatpak run io.github.alainm23.planify"
+bindsym $mod+Shift+P [class="io.github.alainm23.planify"] scratchpad show
+for_window [class="io.github.alainm23.planify"] floating enable, resize set height 800, resize set width 1000, move scratchpad
+
+# SHORTCUTS + STARTUP - DISCORD
+exec_always --no-startup-id "/home/crispy/Applications/Discord/Discord"
+bindsym $mod+Shift+D [class="discord"] scratchpad show
+for_window [class="discord"] floating enable, resize set height 1000, resize set width 1200, move scratchpad
+
+# SHORTCUTS + STARTUP - THUNDERBIRD
+exec_always --no-startup-id "thunderbird"
+bindsym $mod+Shift+T [class="thunderbird"] scratchpad show
+for_window [class="thunderbird"] floating enable, resize set height 1000, resize set width 1200, move scratchpad
+
+# SHORTCUTS + STARTUP - NOTION APP
+exec_always --no-startup-id "notion-app"
+bindsym $mod+Shift+N [class="notion-app"] scratchpad show
+for_window [class="notion-app"] floating enable, resize set height 1000, resize set width 1200, move scratchpad
+
 # SHORTCUTS - CHANGE CONFIG
-bindsym $mod+Shift+S exec --no-startup-id python /home/crispy/dotfiles/i3/scripts/i3-config-swap.py
+bindsym $mod+Shift+A exec --no-startup-id python /home/crispy/dotfiles/i3/scripts/i3-config-swap.py
 
 # SHORTCUTS - SCREENSHOTS
 bindsym Print exec --no-startup-id maim --select | xclip -selection clipboard -t image/png
@@ -160,15 +181,16 @@ exec --no-startup-id nm-applet
 exec_always --no-startup-id xfce4-power-manager
 exec --no-startup-id clipit
 exec --no-startup-id blueman-applet
-exec --no-startup-id volumeicon
-exec --no-startup-id pa-applet
+# exec --no-startup-id volumeicon
+# exec --no-startup-id pa-applet
 
 # STARTUP - I3-LOCK
 exec --no-startup-id xautolock -time 10 -locker betterlockscreen -l dim
 bindsym $mod+Escape exec --no-startup-id betterlockscreen -l dim
 
 # STARTUP - PULSEAUDIO
-exec --no-startup-id pulseaudio
+# exec --no-startup-id pulseaudio
+exec --no-startup-id "kill pulseaudio"
 
 # STARTUP - AUTORANDR
 exec_always --no-startup-id autorandr --change
