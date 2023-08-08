@@ -9,4 +9,10 @@ set -U fish_greeting "   _____ __    ____  ________  __
 /____/_____/\____/ /_/ /_/ /_/   
                                  "
 
+alias pycharm='$HOME/Applications/pycharm-2023.2/bin/pycharm.sh'
+fish_add_path /home/sloth/.cargo/bin
+fish_add_path /home/sloth/bin
+
+set BROWSER /usr/bin/google-chrome-stable
+
 starship init fish | source
