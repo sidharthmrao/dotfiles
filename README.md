@@ -22,3 +22,4 @@ Move all files into the ~/.config directory. (cp -r . ~/.config)
  - playerctl
  - hyprshot
  - chrome [google-chrome] (can replace with firefox in config)
+ - swaylock-effects
