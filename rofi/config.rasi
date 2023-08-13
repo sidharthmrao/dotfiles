@@ -1,3 +1,11 @@
+/**
+ *
+ * Author : Aditya Shakya (adi1090x)
+ * Github : @adi1090x
+ * 
+ * Rofi Theme File
+ * Rofi Version: 1.7.3
+ **/
 
 /*****----- Configuration -----*****/
 configuration {
@@ -12,8 +20,8 @@ configuration {
 }
 
 /*****----- Global Properties -----*****/
-@import                          "~/.config/waybar/scripts/network/colors.rasi"
-@import                          "~/.config/rofi/fonts.rasi"
+@import                          "./colors.rasi"
+@import                          "./fonts.rasi"
 
 * {
     border-colour:               var(selected);
@@ -45,12 +53,12 @@ configuration {
 window {
     /* properties for window widget */
     transparency:                "real";
-    location:                    north east;
-    anchor:                      north east;
+    location:                    center;
+    anchor:                      center;
     fullscreen:                  false;
     width:                       400px;
-    x-offset:                    -30px;
-    y-offset:                    60px;
+    x-offset:                    0px;
+    y-offset:                    0px;
 
     /* properties for all widgets */
     enabled:                     true;
@@ -58,7 +66,7 @@ window {
     padding:                     0px;
     border:                      0px solid;
     border-radius:               10px;
-    border-color:                @border-colour;
+    border-color:                #89B4FA;
     cursor:                      "default";
     /* Backgroud Colors */
     background-color:            @background-colour;
@@ -79,9 +87,10 @@ mainbox {
     margin:                      0px;
     padding:                     30px;
     border:                      0px solid;
-    border-radius:               0px 0px 0px 0px;
-    border-color:                @border-colour;
+    border-radius:               15px;
+    border-color:                #6f91c9;
     background-color:            transparent;
+    transparency :               "real";
     children:                    [ "inputbar", "message", "listview" ];
 }
 
@@ -299,5 +308,3 @@ error-message {
     background-color:            @background-colour;
     text-color:                  @foreground-colour;
 }
-
-

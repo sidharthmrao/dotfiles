@@ -18,18 +18,18 @@ tooltip {
     border-radius: 10px;
     border-width: 1.5px;
     border-style: solid;
-    border-color: #11111b;
+    border-color: fuchsia;
     transition: 0.3s;
 }
 
 #workspaces button {
-    padding: 5px;
-    color: #313244;
+    padding: 3px;
+    color: purple;
     margin-right: 5px;
 }
 
 #workspaces button.active {
-    color: #a6adc8;
+    color: fuchsia;
 }
 
 #workspaces button.focused {
@@ -60,7 +60,8 @@ tooltip {
 #backlight,
 #user,
 #custom-screen, 
-#custom-spotify {
+#custom-spotify,
+#submap {
     background: black;
     opacity: 0.8;
     padding: 0px 10px;
@@ -73,6 +74,13 @@ tooltip {
     color: deeppink;
     border-radius: 5px;
     border: 4px solid deeppink;
+}
+
+#submap {
+    color: red;
+    border-radius: 5px;
+    margin-left: 2px;
+    border: 4px solid red;
 }
 
 #custom-screen {
@@ -112,6 +120,7 @@ tooltip {
 
 #custom-spotify {
     color: #89b4fa;
+    color: #a6e3a1;
     border-radius: 7px;
     border-right: 0px;
     padding-left: 7px;
@@ -133,6 +142,7 @@ tooltip {
     color: #fab387;
     border-radius: 7px;
     margin-left: 5px;
+    margin-right: 5px;
     border-right: 0px;
     transition: 0.3s;
     padding-left: 7px;
@@ -148,7 +158,7 @@ tooltip {
 #bluetooth {
     color: #89b4fa;
     border-radius: 0px 7px 7px 0px;
-    margin-right: 10px
+    margin-right: 5px
 }
 
 #cpu {

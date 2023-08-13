@@ -1,22 +1,22 @@
 {
     "layer": "top",
     "position": "top",
-    "mod": "dock",
     "exclusive": true,
     "passthrough": false,
     "gtk-layer-shell": true,
-    "height": 30,
-    "modules-left": ["clock","hyprland/window", "wlr/workspaces", "custom/spotify"],
-    "modules-center": ["user", "custom/screen"],
+    "height": 15,
+    "modules-left": ["clock", "wlr/workspaces", "custom/spotify"],
+    "modules-center": ["user", "custom/screen", "hyprland/submap"],
     "modules-right": ["network", "bluetooth", "cpu", "disk", "temperature","custom/power_profile","battery","backlight","pulseaudio","tray"],
-    "hyprland/window": {
-        "format": "{}"
-    },
 
     "hyprland/window": {
         "format": "{}",
         "separate-outputs": true,
         "max-length": 30,
+    },
+
+    "hyprland/submap": {
+        "format": "Submap: {}",
     },
 
     "hyprland/workspaces": {
@@ -33,9 +33,9 @@
             "9": "九",
             "10": "十",
             "default": "",
-            "active": "",
             "on-click": "activate",
         },
+	"sort-by-number": true,
     },
 
     "wlr/workspaces": {
@@ -216,9 +216,9 @@
     },
 
     "custom/screen": {
-        "exec": "python /home/sloth/.config/hypr/monitor_configs/switch_modes.py --current",
+        "exec": "python ~/.config/hypr/monitor_configs/switch_modes.py --current",
         "interval": 2,
-        "on-click": "python /home/sloth/.config/hypr/monitor_configs/switch_modes.py --switch &",
+        "on-click": "python ~/.config/hypr/monitor_configs/switch_modes.py --switch &",
         "format": "{}"
     },
 
@@ -231,7 +231,7 @@
     	"on-click": "playerctl -p spotify spotify play-pause",
     	"on-click-right": "playerctl -p spotify next",
     	"smooth-scrolling-threshold": 10, // This value was tested using a trackpad, it should be lowered if using a mouse.
-    	"exec": "python /home/sloth/.config/waybar/scripts/mediaplayer.py", // Script in resources/custom_modules folder
+    	"exec": "python ~/.config/waybar/scripts/mediaplayer.py", // Script in resources/custom_modules folder
     	"exec-if": "pgrep spotify"
     }
 }
