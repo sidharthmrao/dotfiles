@@ -1,10 +1,12 @@
 Move all files into the ~/.config directory. (cp -r . ~/.config)
+Then you can delete this folder, and git fetch and git pull into the ~/.config directory directly.
 
 # Setups:
 
 ## Hyprland:
  - Jetbrains Nerd Font [ttf-jetbrains-mono-nerd]
  - Hurmit Nerd Font [otf-hermit-nerd]
+ - nwg-look
  - udiskie
  - networkmanager / network-manager-applet
  - blueman
