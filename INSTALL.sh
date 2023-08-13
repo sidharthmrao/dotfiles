@@ -3,6 +3,8 @@
 mkdir -p ~/.local/share/icons && cp -r ./gtk-themes-icons/oreo_spark_pink_cursors ~/.local/share/icons/
 cp -r ./gtk-themes-icons/candy-icons ~/.local/share/icons/
 mkdir -p ~/.local/share/themes && cp -r ./gtk-themes-icons/Sweet-Dark-v40 ~/.local/share/themes/
+mkdir -p ~/.icons/default && cp ./gtk-themes-icons/index.theme ~/.icons/default/
+mkdir -p ~/.config/xsettingsd && cp ./gtk-themes-icons/xsettingsd.conf ~/.config/xsettingsd/
 
 cp -r fish ~/.config/
 cp -r gtk-2.0 ~/.config/
