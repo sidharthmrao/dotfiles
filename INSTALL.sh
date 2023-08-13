@@ -16,3 +16,5 @@ cp -r starship ~/.config/
 cp -r waybar ~/.config/
 cp -r Wallpapers ~/.config/
 cp -r .git ~/.config/
+
+nwg-look -a
