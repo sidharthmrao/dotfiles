@@ -18,3 +18,4 @@ cp -r Wallpapers ~/.config/
 cp -r .git ~/.config/
 
 nwg-look -a
+chsh -s /bin/fish
