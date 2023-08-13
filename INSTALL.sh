@@ -5,6 +5,7 @@ cp -r ./gtk-themes-icons/candy-icons ~/.local/share/icons/
 mkdir -p ~/.local/share/themes && cp -r ./gtk-themes-icons/Sweet-Dark-v40 ~/.local/share/themes/
 mkdir -p ~/.icons/default && cp ./gtk-themes-icons/index.theme ~/.icons/default/
 mkdir -p ~/.config/xsettingsd && cp ./gtk-themes-icons/xsettingsd.conf ~/.config/xsettingsd/
+cp ./gtk-themes-icons/.gtkrc-2.0 ~/.gtkrc-2.0
 
 cp -r fish ~/.config/
 cp -r gtk-2.0 ~/.config/
