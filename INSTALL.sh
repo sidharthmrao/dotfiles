@@ -17,5 +17,10 @@ cp -r waybar ~/.config/
 cp -r Wallpapers ~/.config/
 cp -r .git ~/.config/
 
+gsettings set org.gnome.desktop.wm.preferences theme "Sweet"
+gsettings set org.gnome.desktop.interface gtk-theme "Sweet"
+gsettings set org.gnome.desktop.interface cursor-theme 'Oreo Spark Pink'
+gsettings set org.gnome.desktop.interface icon-theme "candy-icons"
+
 nwg-look -a
 chsh -s /bin/fish
