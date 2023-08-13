@@ -1,6 +1,10 @@
+Move all files into the ~/.config directory. (cp -r . ~/.config)
+
 # Setups:
 
 ## Hyprland:
+ - Jetbrains Nerd Font (ttf-jetbrains-mono-nerd)
+ - Hurmit Nerd Font (otf-hermit-nerd)
  - udiskie
  - networkmanager / network-manager-applet
  - blueman
@@ -9,7 +13,7 @@
  - dunst
  - hyprsome
  - kitty
- - fish (starship prompt)
+ - fish + (starship prompt)
  - pamixer
  - thunar (replaceable in config)
  - qalculate-gtk
