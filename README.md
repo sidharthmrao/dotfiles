@@ -26,3 +26,4 @@ Then you can delete this folder, and git fetch and git pull into the ~/.config d
  - chrome [google-chrome] (can replace with firefox in config)
  - swaylock-effects
  - swaybg
+ - brightnessctl
