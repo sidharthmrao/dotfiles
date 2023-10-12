@@ -216,19 +216,19 @@
     },
 
     "custom/user": {
-        "exec": "python ~/Programming/Python/DataController/main.py GET user_text",
+        "exec": "python ~/dotfiles/DataController/main.py GET user_text",
         "format": "{}",
         "interval": 2
     },
 
     "custom/blur": {
-        "exec": "python ~/Programming/Python/DataController/main.py GET blur_config",
+        "exec": "python ~/dotfiles/DataController/main.py GET blur_config",
         "format": "{}",
         "interval": 2
     },
 
     "custom/gaps": {
-        "exec": "python ~/Programming/Python/DataController/main.py GET gaps_config",
+        "exec": "python ~/dotfiles/DataController/main.py GET gaps_config",
 	"format": "{}",
         "interval": 2
     },
