@@ -6,7 +6,7 @@
     "gtk-layer-shell": true,
     "height": 15,
     "modules-left": ["clock", "wlr/workspaces", "custom/spotify"],
-    "modules-center": ["user", "custom/screen", "hyprland/submap"],
+    "modules-center": ["custom/user", "custom/screen", "custom/blur", "custom/gaps", "hyprland/submap"],
     "modules-right": ["network", "bluetooth", "cpu", "disk", "temperature","custom/power_profile","battery","backlight","pulseaudio","tray"],
 
     "hyprland/window": {
@@ -32,7 +32,7 @@
             "8": "八",
             "9": "九",
             "10": "十",
-            "default": "",
+	    "active": "",
             "on-click": "activate",
         },
 	"sort-by-number": true,
@@ -51,8 +51,8 @@
             "8": "八",
             "9": "九",
             "10": "十",
-            "default": "",
-            "active": "",
+            // "default": "",
+            // "active": "",
             "on-click": "activate",
         },
         "disable-scroll": true,
@@ -213,6 +213,24 @@
     "user": {
         "format": "{user}",
         "interval": 60,
+    },
+
+    "custom/user": {
+        "exec": "python ~/Programming/Python/DataController/main.py GET user_text",
+        "format": "{}",
+        "interval": 2
+    },
+
+    "custom/blur": {
+        "exec": "python ~/Programming/Python/DataController/main.py GET blur_config",
+        "format": "{}",
+        "interval": 2
+    },
+
+    "custom/gaps": {
+        "exec": "python ~/Programming/Python/DataController/main.py GET gaps_config",
+	"format": "{}",
+        "interval": 2
     },
 
     "custom/screen": {

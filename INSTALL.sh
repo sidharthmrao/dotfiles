@@ -27,3 +27,9 @@ gsettings set org.gnome.desktop.interface icon-theme "candy-icons"
 
 nwg-look -a
 chsh -s /bin/fish
+
+echo "Please open nwg-look and set your desired themes."
+echo "Recommended:"
+echo "    Theme: Sweet-Dark"
+echo "    Icons: Candy-Icons"
+echo "    Cursor: Oreo Spark Pink Cursors"

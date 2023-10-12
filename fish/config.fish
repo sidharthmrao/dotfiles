@@ -11,7 +11,7 @@ set -U fish_greeting "   _____ __    ____  ________  __
 
 alias pycharm='$HOME/Applications/pycharm-2023.2/bin/pycharm.sh'
 fish_add_path ~/.cargo/bin
-fish_add_path ~/bin
+fish_add_path ~/slothbin
 
 set BROWSER /usr/bin/google-chrome-stable
 

@@ -59,7 +59,10 @@ tooltip {
 #tray,
 #backlight,
 #user,
-#custom-screen, 
+#custom-user,
+#custom-screen,
+#custom-blur,
+#custom-gaps, 
 #custom-spotify,
 #submap {
     background: black;
@@ -70,7 +73,7 @@ tooltip {
     border: 1px solid #1e1e2e;
 }
 
-#user {
+#user, #custom-user {
     color: deeppink;
     border-radius: 5px;
     border: 4px solid deeppink;
@@ -83,7 +86,7 @@ tooltip {
     border: 4px solid red;
 }
 
-#custom-screen {
+#custom-screen, #custom-blur, #custom-gaps {
     color: fuchsia;
     border-radius: 5px;
     border: 4px solid fuchsia;
